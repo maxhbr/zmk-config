@@ -27,21 +27,33 @@
                         then-layer = <3>;
                 };
         };
+    behaviors {
+        // This is mod-tap with the "balanced" flavor.
+        // Improves the '&mt RCTRL SPACE' behavior when typing quickly.
+        bmt: balanced_mod_tap {
+                compatible = "zmk,behavior-hold-tap";
+                label = "MOD_TAP";
+                #binding-cells = <2>;
+                flavor = "balanced";
+                tapping-term-ms = <200>;
+                bindings = <&kp>, <&kp>;
+        };
+    };
 
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
                         bindings = <
-// +-------------+----------+-----------+-----------+----------+--------+                                                             +--------+----------+-----------+----------+-------------+----------------+
-// |             |          |           |           |          |        |                                                             |        |          |           |          |             |                |
-   &lt HYPER ESC &kp  N1    &kp  N2     &kp  N3     &kp  N4    &kp  N5                                                                &kp  N6  &kp  N7    &kp  N8     &kp  N9    &kp  N0       &kp  MINUS
-   &kp  TAB      &kp  Q     &kp  W      &kp  E      &kp  R     &kp  T                                                                 &kp  Y   &kp  U     &kp  I      &kp  O     &kp  P        &kp  LEFT_BRACKET
-   &kp  CAPS     &kp  A     &kp  S      &kp  D      &kp  F     &kp  G    /*-------------+-------------+  +-------------+-----------*/ &kp  H   &kp  J     &kp  K      &kp  L     &kp  SEMI     &kp  SQT
-   &kp  LSHFT    &kp  Z     &kp  X      &kp  C      &kp  V     &kp  B    &kp  LCTRL     &mt LSHFT SPC    &mt RSHFT RET &kp  HOME      &kp  N   &kp  M     &kp  COMMA  &kp  DOT   &kp  SLASH    &mt  RSHFT ENTER
-   &kp  LALT     &kp PG_DN  &kp  PG_UP  &kp  LMETA             &kp RET   &bmt LMETA RET &mo  LOWER       &mo  RAISE    &bmt LMETA SPC &kp SPC             &kp  LEFT   &kp  DOWN  &kp  UP       &kp  RIGHT
-// |             |          |           |                      |         |              |             |  |             |              |                   |           |          |             |                 |
-// +-------------+----------+-----------+----------------------+---------+--------------+-------------+  +-------------+--------------+-------------------+-----------+----------+-------------+-----------------+
+// +-----------+----------+-----------+-----------+----------+--------+                                                             +--------+----------+-----------+----------+-------------+----------------+
+// |           |          |           |           |          |        |                                                             |        |          |           |          |             |                |
+   &kp  ESC    &kp  N1    &kp  N2     &kp  N3     &kp  N4    &kp  N5                                                                &kp  N6  &kp  N7    &kp  N8     &kp  N9    &kp  N0       &kp  MINUS
+   &kp  TAB    &kp  Q     &kp  W      &kp  E      &kp  R     &kp  T                                                                 &kp  Y   &kp  U     &kp  I      &kp  O     &kp  P        &kp  LEFT_BRACKET
+   &kp  CAPS   &kp  A     &kp  S      &kp  D      &kp  F     &kp  G    /*-------------+-------------+  +-------------+-----------*/ &kp  H   &kp  J     &kp  K      &kp  L     &kp  SEMI     &kp  SQT
+   &kp  LSHFT  &kp  Z     &kp  X      &kp  C      &kp  V     &kp  B    &kp  LCTRL     &mt LSHFT SPC    &mt RSHFT RET &kp  HOME      &kp  N   &kp  M     &kp  COMMA  &kp  DOT   &kp  SLASH    &mt  RSHFT ENTER
+   &kp  LALT   &kp PG_DN  &kp  PG_UP  &kp  LMETA             &kp RET   &bmt LMETA RET &mo  LOWER       &mo  RAISE    &bmt LMETA SPC &kp SPC             &kp  LEFT   &kp  DOWN  &kp  UP       &kp  RIGHT
+// |           |          |           |                      |         |              |             |  |             |              |                   |           |          |             |                 |
+// +-----------+----------+-----------+----------------------+---------+--------------+-------------+  +-------------+--------------+-------------------+-----------+----------+-------------+-----------------+
                         >;
                 };
 
