@@ -13,9 +13,6 @@
 #define LOWER   1
 #define RAISE   2
 #define ADJUST  3
-#define HYPER   4
-
-#define HYPR(KC) LC(LS(LA(LG(KC))))
 
 / {
 
@@ -50,7 +47,7 @@
    &kp  ESC    &kp  N1    &kp  N2     &kp  N3     &kp  N4    &kp  N5                                                                &kp  N6  &kp  N7    &kp  N8     &kp  N9    &kp  N0       &kp  MINUS
    &kp  TAB    &kp  Q     &kp  W      &kp  E      &kp  R     &kp  T                                                                 &kp  Y   &kp  U     &kp  I      &kp  O     &kp  P        &kp  LEFT_BRACKET
    &kp  CAPS   &kp  A     &kp  S      &kp  D      &kp  F     &kp  G    /*-------------+-------------+  +-------------+-----------*/ &kp  H   &kp  J     &kp  K      &kp  L     &kp  SEMI     &kp  SQT
-   &kp  LSHFT  &kp  Z     &kp  X      &kp  C      &kp  V     &kp  B    &kp  LCTRL     &mt LSHFT SPC    &mt RSHFT RET &kp  HOME      &kp  N   &kp  M     &kp  COMMA  &kp  DOT   &kp  SLASH    &mt  RSHFT ENTER
+   &kp  LSHFT  &kp  Z     &kp  X      &kp  C      &kp  V     &kp  B    &kp  LCTRL     &kp  DEL         &kp  BSPC     &kp  RCTRL     &kp  N   &kp  M     &kp  COMMA  &kp  DOT   &kp  SLASH    &mt  RSHFT ENTER
    &kp  LALT   &kp PG_DN  &kp  PG_UP  &kp  LMETA             &kp RET   &bmt LMETA RET &mo  LOWER       &mo  RAISE    &bmt LMETA SPC &kp SPC             &kp  LEFT   &kp  DOWN  &kp  UP       &kp  RIGHT
 // |           |          |           |                      |         |              |             |  |             |              |                   |           |          |             |                 |
 // +-----------+----------+-----------+----------------------+---------+--------------+-------------+  +-------------+--------------+-------------------+-----------+----------+-------------+-----------------+
@@ -84,16 +81,6 @@
 &none        &none        &none        &none        &none        &none                                                                                 &none        &none        &none        &none        &none        &none
 &none        &none        &none        &none        &none        &none                     &none       &none         &none       &none                 &none        &none        &none        &none        &none        &none
 &bt BT_CLR   &none        &none        &none                                     &none     &none       &trans        &trans      &none     &none                                 &none        &none        &none        &bt BT_CLR
-                        >;
-                };
-
-                hyper_layer {
-                        bindings = <
-&trans        &trans     &trans      &trans      &trans      &trans                                                                         &trans   &trans     &trans      &trans     &trans        &none
-&trans        &trans     &kp HYPR(W) &trans      &trans      &trans                                                                         &trans   &trans     &trans      &trans     &trans        &none
-&trans        &trans     &trans      &trans      &kp HYPR(F) &trans                                                                         &kp LEFT &kp DOWN   &kp UP      &kp RIGHT  &trans        &none
-&trans        &trans     &trans      &trans      &trans      &trans             &trans      &trans        &trans      &trans                &trans   &trans     &trans      &trans     &trans        &none
-&trans        &trans     &trans      &trans                           &trans    &kp HYPR(SPACE)       &trans        &trans      &trans    &trans                          &trans      &trans     &trans        &none
                         >;
                 };
         };
