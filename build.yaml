@@ -34,4 +34,7 @@ include:
     shield: revxlp
 
   - board: nice_nano_v2
+    sheild: eternal_keypad_lefty
+
+  - board: nice_nano_v2
     shield: settings_reset
