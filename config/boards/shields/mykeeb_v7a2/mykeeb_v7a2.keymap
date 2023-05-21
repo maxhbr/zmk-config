@@ -26,6 +26,19 @@
             };
     };
 
+    behaviors {
+        // This is mod-tap with the "balanced" flavor.
+        // Improves the '&mt RCTRL SPACE' behavior when typing quickly.
+        bmt: balanced_mod_tap {
+			compatible = "zmk,behavior-hold-tap";
+			label = "MOD_TAP";
+			#binding-cells = <2>;
+			flavor = "balanced";
+			tapping-term-ms = <200>;
+			bindings = <&kp>, <&kp>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
