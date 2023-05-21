@@ -6,6 +6,9 @@
 #define BASE 0
 #define NUM  1
 
+#define PTAB LC(PG_UP)
+#define NTAB LC(PG_DN)
+
 &mt {
   quick-tap-ms = <100>;
   global-quick-tap;
