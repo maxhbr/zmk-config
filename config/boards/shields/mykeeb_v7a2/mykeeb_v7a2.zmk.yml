@@ -1,0 +1,11 @@
+file_format: "1"
+id: mykeeb_v7a2
+name: mykeeb_v7a2
+type: shield
+url: https://github.com/maxhbr/zmk-stuff/tree/main/mykeeb/rev7
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
+siblings:
+  - mykeeb_v7a2_left
+  - mykeeb_v7a2_right

@@ -36,5 +36,11 @@ include:
   - board: nice_nano_v2
     shield: eternal_keypad_lefty
 
+
+  - board: seeeduino_xiao_ble
+    shield: mykeeb_v7a2_left
+  - board: seeeduino_xiao_ble
+    shield: mykeeb_v7a2_right
+
   - board: nice_nano_v2
     shield: settings_reset

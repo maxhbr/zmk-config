@@ -1,0 +1,8 @@
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SHIELD_MYKEEB_V7A2_LEFT
+    def_bool $(shields_list_contains,mykeeb_v7a2_left)
+
+config SHIELD_MYKEEB_V7A2_RIGHT
+    def_bool $(shields_list_contains,mykeeb_v7a2_right)
