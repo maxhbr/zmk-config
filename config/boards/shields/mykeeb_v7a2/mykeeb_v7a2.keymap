@@ -39,7 +39,6 @@
        &kp LALT         &none   &kp RET   &bmt LMETA RET &lt NUM RET   &none          &none &lt NUM SPC   &bmt LMETA SPC    &kp SPC                    &kp RALT
                         >;
                 };
-        };
         num_layer {
             label= "NUM";
             bindings = <
