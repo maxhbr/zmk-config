@@ -7,7 +7,7 @@
 #include "mykeeb_v7a2.dtsi"
 
 &default_transform {
-    col-offset = <7>;
+    col-offset = <5>;
 };
 
 &kscan0 {
