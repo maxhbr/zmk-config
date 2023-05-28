@@ -9,6 +9,8 @@
 #define PTAB LC(PG_UP)
 #define NTAB LC(PG_DN)
 
+#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+
 &mt {
   quick-tap-ms = <100>;
   global-quick-tap;
@@ -37,6 +39,14 @@
 			tapping-term-ms = <200>;
 			bindings = <&kp>, <&kp>;
         };
+        mo_tog: behavior_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            label = "mo_tog";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&tog>;
+        };
     };
 
     keymap {
@@ -50,7 +60,7 @@
   &kp TAB    &kp Q      &kp W       &kp E     &kp R      &kp T               /*|*/                                /*|*/       &kp Y       &kp U      &kp I      &kp O      &kp P      &kp LEFT_BRACKET
   &kp CAPS   &kp A      &kp S       &kp D     &kp F      &kp G      &kp TAB       /*+-----+*/          /*+-----+*/  &kp TAB   &kp H       &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
   &kp LSHFT  &kp Z      &kp X       &kp C     &kp V      &kp B      &kp LCTRL  &kp DEL                   &kp BSPC   &kp RCTRL &kp N       &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHIFT
-  &kp LALT              &tog NUM    &kp RET   &bmt LMETA RET    &lt NUM RET    &to BASE                  &to BASE   &lt NUM SPC   &bmt LMETA SPC     &kp SPC    &tog NUM              &kp RALT   
+  &kp LALT              MO_TOG(NUM) &kp RET   &bmt LMETA RET    &lt NUM RET    &to BASE                  &to BASE   &lt NUM SPC   &bmt LMETA SPC     &kp SPC    MO_TOG(NUM)           &kp RALT   
 /*+----------+----------+----------+----------+----------+----------+----------+----------+*/          /*+----------+----------+----------+----------+----------+----------+----------+----------+*/
                         >;
                 };
@@ -62,7 +72,7 @@
   &trans     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5              /*|*/                                /*|*/        &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &trans
   &trans     &none      &kp PTAB   &kp PG_UP  &none      &none      &trans        /*+-----+*/          /*+-----+*/  &trans     &kp PG_UP  &none      &kp UP     &none      &none      &trans
   &trans     &none      &kp NTAB   &kp PG_DN  &kp INS    &none      &trans     &trans                    &trans     &trans     &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &none      &trans
-  &trans                &trans     &trans     &trans               &trans      &trans                    &trans     &trans       &trans              &trans     &trans                &trans
+  &trans                &trans     &trans     &trans                &trans     &trans                    &trans     &trans       &trans              &trans     &trans                &trans
 /*+----------+----------+----------+----------+----------+----------+----------+----------+*/          /*+----------+----------+----------+----------+----------+----------+----------+----------+*/
                         >;
                 };
@@ -77,7 +87,7 @@
 //                        >;
 //                };
         wm_layer {
-            label= "WM";
+            label= "WM"; 
             bindings = <
   &none &none                         &none                                  &none                         &none &none      
   &none &none &none &none &none &none                                              &none &none &none &none &none &none
