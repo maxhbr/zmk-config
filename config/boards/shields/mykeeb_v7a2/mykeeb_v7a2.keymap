@@ -63,7 +63,7 @@
   &kp CAPS   &kp A      &kp S       &kp D     &kp F      &kp G      &kp TAB       /*━━━━━━┓              ┏━━━━━━*/  &kp TAB   &kp H       &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
   &kp LSHFT  &kp Z      &kp X       &kp C     &kp V      &kp B      &kp LCTRL  &kp DEL                   &kp BSPC   &kp RCTRL &kp N       &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHIFT
 //┣━━━━━━━━━━╋━┳━━━━━━━━┻━━━━━┳━━━━━┻━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━━┻━━━━━┳━━━┻━━━━━━━━━━┫              ┣━━━━━━━━━━┻━━━┳━━━━━┻━━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━╋━━━━━━━━━━┫
-  &kp LALT     MO_TOG(NUM)    &lt NUM RET    &bmt LMETA RET &lt NUM RET    &mo WM                        &mo WM         &kp SPC        &bmt LMETA SPC &lt NUM RET    MO_TOG(NUM)      &kp RALT
+  &kp LALT     MO_TOG(NUM)    &lt NUM RET    &bmt LMETA RET &lt NUM RET    &mo WM                        &mo WM         &lt NUM SPC    &bmt LMETA SPC &lt NUM SPC    MO_TOG(NUM)      &kp RALT
 //┗━━━━━━━━━━┛ ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛              ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛ ┗━━━━━━━━━━┛
                         >;
                 };
