@@ -77,7 +77,7 @@
   &trans     &none      &kp PTAB   &kp PG_UP  &none      &none      &trans        /*━━━━━━┓              ┏━━━━━━*/  &trans     &kp PG_UP  &none      &kp UP     &none      &none      &trans
   &trans     &none      &kp NTAB   &kp PG_DN  &kp INS    &none      &trans     &trans                    &trans     &trans     &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &none      &trans
 //┣━━━━━━━━━━╋━┳━━━━━━━━┻━━━━━┳━━━━━┻━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━━┻━━━━━┳━━━┻━━━━━━━━━━┫              ┣━━━━━━━━━━┻━━━┳━━━━━┻━━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━╋━━━━━━━━━━┫
-  &trans       trans          &trans         &trans         &trans         &to BASE                      &to BASE       &trans         &trans         &trans         &trans           &trans
+  &trans       &trans         &trans         &trans         &trans         &to BASE                      &to BASE       &trans         &trans         &trans         &trans           &trans
 //┗━━━━━━━━━━┛ ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛              ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛ ┗━━━━━━━━━━┛
                         >;
                 };
