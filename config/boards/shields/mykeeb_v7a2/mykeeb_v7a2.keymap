@@ -5,8 +5,8 @@
 
 #define BASE 0
 #define NUM  1
-#define WM  2
-#define MISC  2
+#define WM   2
+#define MISC 3
 
 #define PTAB LC(PG_UP)
 #define NTAB LC(PG_DN)
