@@ -12,12 +12,13 @@
 
 #define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
-&mt{
-  quick-tap-ms = <100>;
-  global-quick-tap;
-  flavor = "tap-preferred";
-  tapping-term-ms = <170>;
-};
+// for homerow mod:
+// &mt{
+//   quick-tap-ms = <100>;
+//   global-quick-tap;
+//   flavor = "tap-preferred";
+//   tapping-term-ms = <170>;
+// };
 
 / {
     combos {
@@ -60,7 +61,7 @@
   &kp ESC    &bootloader                                            &kp DEL                                  &kp BSPC                                               &none      &kp MINUS
 //┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┫                             ┏━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
   &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T               /*┃                             ┃*/       &kp Y       &kp U      &kp I      &kp O      &kp P      &kp LEFT_BRACKET
-  &kp CAPS   &mt LGUI A &mt LALT S &mt LCTRL D &mt LSHFT F &kp G    &kp TAB       /*━━━━━━┓       ┏━━━━━━*/  &kp TAB   &kp H       &mt RSHFT J &mt RCTRL K &mt RALT L &mt RGUI SEMI &kp SQT
+  &kp CAPS   &kp A      &kp S      &kp D      &kp F      &kp G      &kp TAB       /*━━━━━━┓       ┏━━━━━━*/  &kp TAB   &kp H       &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
   &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B      &kp LCTRL  &kp DEL            &kp BSPC   &kp RCTRL &kp N       &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHIFT
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━┻━━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
   &kp LALT       MO_TOG(NUM)    &lt NUM RET    &bmt LMETA RET &kp RET        &none              &none          &kp SPC        &bmt LMETA SPC &lt NUM SPC    MO_TOG(NUM)        &kp RALT
