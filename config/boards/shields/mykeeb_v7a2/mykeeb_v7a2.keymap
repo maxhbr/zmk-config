@@ -13,6 +13,14 @@
 
 #define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
+#define CAPS_MACRO(name,key) \
+    name: name { \
+            label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
+            compatible = "zmk,behavior-macro"; \
+            #binding-cells = <0>; \
+            bindings = <&macro_press &kp CAPS> , <&macro_tap &kp key >  , <&macro_release &kp CAPS> ; \
+        };
+
 &sl {
     release-after-ms = <2000>;
 };
@@ -40,16 +48,28 @@
     };
 
     macros {
-        colon: colon {
-            label = "colon";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp CAPS>
-                , <&macro_tap &kp D>
-                , <&macro_release &kp CAPS>
-                ;
-        };
+        CAPS_MACRO(colon, SEMI)
+        CAPS_MACRO(semi, FSLH)
+        // colon: colon {
+        //     label = "colon";
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     bindings
+        //         = <&macro_press &kp CAPS>
+        //         , <&macro_tap &kp SEMI>
+        //         , <&macro_release &kp CAPS>
+        //         ;
+        // };
+        // semi: semi {
+        //     label = "semi";
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     bindings
+        //         = <&macro_press &kp CAPS>
+        //         , <&macro_tap &kp FSLH>
+        //         , <&macro_release &kp CAPS>
+        //         ;
+        // };
     };
 
     keymap {
@@ -77,7 +97,7 @@
 //┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┫                             ┏━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
   &trans     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5              /*┃                             ┃*/        &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &trans
   &trans     &none      &kp PTAB   &kp PG_UP  &none      &none      &trans   /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &trans     &kp PG_UP  &kp LEFT   &kp UP     &kp RIGHT  &colon     &trans
-  &trans     &none      &kp NTAB   &kp PG_DN  &kp INS    &none      &trans     &trans             &trans     &trans     &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &none      &trans
+  &trans     &none      &kp NTAB   &kp PG_DN  &kp INS    &none      &trans     &trans             &trans     &trans     &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &semi      &trans
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━┻━━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
   &trans         &mo MISC       &trans         &trans         &trans         &to BASE           &to BASE       &trans         &trans         &trans         &mo MISC           &trans
 //┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
