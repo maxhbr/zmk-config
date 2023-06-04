@@ -2,15 +2,18 @@
 
 set -euo pipefail
 
-DIR="$(readlink -f "$(dirname "$0")")/firmware"
+SCRIPT="$(readlink -f "$0")"
+DIR="$(dirname "$SCRIPT")/firmware"
 cd "$DIR"
 
 gh run list --limit 1
 conclusion="$(gh run list --limit 1 --json conclusion --jq '.[].conclusion')"
 echo "last action run: ${conclusion}"
-if [[ "$conclusion" != "success" ]]; then
+if [[ "$conclusion" == "" ]]; then
     sleep 10
-    exec "$@"
+    exec "$SCRIPT"
+elif [[ "$conclusion" != "success" ]]; then
+    exit 1
 fi
 echo
 

@@ -50,7 +50,7 @@
 #define BASE_F    &hm LSHIFT F
 #define BASE_G    &kp          G
 #define BASE_H    &kp          H
-#define BASE_J    &hm LLSHIFT J
+#define BASE_J    &hm LSHIFT J
 #define BASE_K    &hm LALT K
 #define BASE_L    &hm LGUI L
 #define BASE_SEMI &hm LCTL SEMI
