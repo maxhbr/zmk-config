@@ -44,7 +44,6 @@
 
 #elif HOMEROW_OPTION == 2
 
-&bhm LCTRL A &bhm LGUI S &bhm LALT D &bhm LSHIFT F
 #define BASE_A    &hm LCTL A
 #define BASE_S    &hm LGUI S
 #define BASE_D    &hm LALT D
