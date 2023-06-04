@@ -61,6 +61,34 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&tog>;
         };
+        lh_pht: left_hand_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <3 4 5
+                                          12 13 14 15 16 17
+                                          25 26 27 28 29 30 31
+                                          39 40 41 42 43 44 45
+                                          52 53 54 55 56 57 >;    // <---[[right-hand keys]]
+        };
+        rh_pht: right_hand_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0 1 2
+                                          6 7 8 9 10 11
+                                          18 19 20 21 22 23 24
+                                          32 33 34 35 36 37 38
+                                          46 47 48 49 51>;    // <---[[left-hand keys]]
+        };
         tabesc: tab_escape {
             compatible = "zmk,behavior-mod-morph";
             label = "TAB_ESCAPE";
@@ -96,7 +124,7 @@
   &none      &bootloader                                            &none                                    &none                                                  &none      &none    
 //┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┫                             ┏━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
   &tabesc    &kp Q      &kp W      &kp E      &kp R      &kp T               /*┃                             ┃*/        &kp Y      &kp U      &kp I      &kp O      &kp P      &kp MINUS
-  &kp CAPS   &kp A      &kp S      &kp D      &kp F      &kp G      &kp TAB  /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &kp TAB    &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
+  &kp CAPS   &lh_pht LSFT A &lh_pht LGUI S &lh_pht LALT D &lh_pht LCTL F &kp G      &kp TAB  /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &kp TAB    &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
   &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B      &bmt LCTRL DEL &kp DEL        &kp BSPC   &bmt RCTRL BSPC &kp N &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHIFT
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
   &none          &none          &lt NAVR RET   &bmt LMETA RET &kp RET        &none              &none          &kp SPC        &bmt LMETA SPC &lt NAVL SPC   &none              &none
@@ -113,7 +141,7 @@
   &trans     &none      &kp PTAB   &kp PG_UP  &none      &none      &trans   /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &trans     &kp PG_UP  &kp LEFT   &kp UP     &kp RIGHT  &colon     &none
   &trans     &none      &kp NTAB   &kp PG_DN  &kp INS    &none      &trans     &trans             &trans     &trans     &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &semi      &trans
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
-  &trans         &mo MISC       &kp RET        &trans         &trans         &to BASE           &to BASE       &trans         &trans         &trans         &mo MISC           &trans
+  &trans         &mo MISC       &trans         &trans         &trans         &to BASE           &to BASE       &trans         &trans         &trans         &mo MISC           &trans
 //┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
             >;
         };
@@ -127,7 +155,7 @@
   &trans     &none      &kp PTAB   &kp PG_UP  &none      &none      &trans   /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &trans     &kp PG_UP  &kp LEFT   &kp UP     &kp RIGHT  &colon     &trans
   &trans     &none      &kp NTAB   &kp PG_DN  &none      &none      &trans     &trans             &trans     &trans     &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &semi      &trans
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
-  &trans         &mo MISC       &trans         &trans         &trans         &to BASE           &to BASE       &trans         &trans         &kp SPC        &mo MISC           &trans
+  &trans         &mo MISC       &trans         &trans         &trans         &to BASE           &to BASE       &trans         &trans         &trans         &mo MISC           &trans
 //┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
             >;
         };

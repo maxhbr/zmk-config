@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [[ "$1" == "--download" ]]; then
+    shift
+    ./download_firmware.sh
+fi
+
 label=XIAO-SENSE
 dev=/dev/disk/by-label/"$label"
 firmware="$1"
