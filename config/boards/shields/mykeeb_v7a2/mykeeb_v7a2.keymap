@@ -42,13 +42,6 @@
 };
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <4>;
-        };
-    };
     behaviors {
         // This is mod-tap with the "balanced" flavor.
         // Improves the '&mt RCTRL SPACE' behavior when typing quickly.
@@ -83,6 +76,14 @@
         ZMK_MACRO(to_num,
             bindings = <&kp Z &kp M &kp K>;
         )
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = < NAVL NAVR >;
+            then-layer = < MISC >;
+        };
     };
 
     keymap {
