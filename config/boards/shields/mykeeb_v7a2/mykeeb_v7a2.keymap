@@ -33,10 +33,10 @@
 #define BASE_F &lh_pht LCTL F
 #define BASE_G &kp          G
 #define BASE_H &kp          H
-#define BASE_J &lh_pht LCTL J
-#define BASE_K &lh_pht LALT K
-#define BASE_L &lh_pht LGUI L
-#define BASE_SEMI &lh_pht LSFT SEMI
+#define BASE_J &rh_pht LCTL J
+#define BASE_K &rh_pht LALT K
+#define BASE_L &rh_pht LGUI L
+#define BASE_SEMI &rh_pht LSFT SEMI
 //┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 //┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -80,11 +80,11 @@
             tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <3 4 5
-                                          12 13 14 15 16 17
-                                          25 26 27 28 29 30 31
-                                          39 40 41 42 43 44 45
-                                          52 53 54 55 56 57 >;    // <---[[right-hand keys]]
+            hold-trigger-key-positions = <0 1 2
+                                          6 7 8 9 10 11
+                                          18 19 20 21 22 23 24
+                                          32 33 34 35 36 37 38
+                                          46 47 48 49 51>;    // <---[[left-hand keys]]
         };
         rh_pht: right_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -94,11 +94,11 @@
             tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <0 1 2
-                                          6 7 8 9 10 11
-                                          18 19 20 21 22 23 24
-                                          32 33 34 35 36 37 38
-                                          46 47 48 49 51>;    // <---[[left-hand keys]]
+            hold-trigger-key-positions = <3 4 5
+                                          12 13 14 15 16 17
+                                          25 26 27 28 29 30 31
+                                          39 40 41 42 43 44 45
+                                          52 53 54 55 56 57 >;    // <---[[right-hand keys]]
         };
         tabesc: tab_escape {
             compatible = "zmk,behavior-mod-morph";
