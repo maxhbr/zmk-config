@@ -34,6 +34,8 @@
 #define NAV  1
 #define NUM  2
 #define MISC 3
+#define NAVL 4
+#define NAVR 5
 //┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 &sl {
@@ -60,6 +62,13 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&tog>;
         };
+        // gresc: grave_escape {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     label = "GRAVE_ESCAPE";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp ESC>, <&kp GRAVE>;
+        //     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        // };
     };
 
     macros {
@@ -76,11 +85,11 @@
 //┏━━━━━━━━━━┳━━━━━━━━━━┓                                           ┏━━━━━━━━━━┓                             ┏━━━━━━━━━━┓                                           ┏━━━━━━━━━━┳━━━━━━━━━━┓
   &none      &bootloader                                            &none                                    &none                                                  &none      &none    
 //┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┫                             ┏━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
-  &kp ESC    &kp Q      &kp W      &kp E      &kp R      &kp T               /*┃                             ┃*/        &kp Y      &kp U      &kp I      &kp O      &kp P      &kp LEFT_BRACKET
+  &kp ESC    &kp Q      &kp W      &kp E      &kp R      &kp T               /*┃                             ┃*/        &kp Y      &kp U      &kp I      &kp O      &kp P      &kp MINUS
   &kp CAPS   &kp A      &kp S      &kp D      &kp F      &kp G      &kp TAB  /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &kp TAB    &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
   &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B      &bmt LCTRL DEL &kp DEL        &kp BSPC   &bmt RCTRL BSPC &kp N &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHIFT
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
-  &none          MO_TOG(NUM)    &lt NAV RET    &bmt LMETA RET &kp RET        &none              &none          &kp SPC        &bmt LMETA SPC &lt NAV SPC    MO_TOG(NUM)        &none   
+  &none          MO_TOG(NUM)    &lt NAVR RET   &bmt LMETA RET &kp RET        &none              &none          &kp SPC        &bmt LMETA SPC &lt NAVL SPC   MO_TOG(NUM)        &none
 //┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
             >;
         };
@@ -123,6 +132,34 @@
   &trans     &none      &kp NTAB   &kp PG_DN  &kp INS    &none      &trans     &trans             &trans     &trans     &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &none      &trans
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
   &trans         &trans         &trans         &trans         &trans         &to BASE           &to BASE       &trans         &trans         &trans         &trans             &trans
+//┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
+            >;
+        };
+        nav_left_layer {
+            label= "NAVL";
+            bindings = <
+//┏━━━━━━━━━━┳━━━━━━━━━━┓                                           ┏━━━━━━━━━━┓                             ┏━━━━━━━━━━┓                                           ┏━━━━━━━━━━┳━━━━━━━━━━┓
+  &to BASE   &none                                                  &trans                                   &trans                                                 &trans     &trans
+//┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┫                             ┏━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
+  &trans     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5              /*┃                             ┃*/        &none      &none      &none      &none      &none      &none
+  &trans     &none      &kp PTAB   &kp PG_UP  &none      &none      &trans   /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &trans     &none      &none      &none      &none      &none      &none
+  &trans     &none      &kp NTAB   &kp PG_DN  &kp INS    &none      &trans     &trans             &trans     &trans     &none      &none      &none      &none      &none      &trans
+//┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
+  &trans         &mo MISC       &kp RET        &trans         &trans         &to BASE           &to BASE       &trans         &trans         &trans         &mo MISC           &trans
+//┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
+            >;
+        };
+        nav_right_layer {
+            label= "NAVR";
+            bindings = <
+//┏━━━━━━━━━━┳━━━━━━━━━━┓                                           ┏━━━━━━━━━━┓                             ┏━━━━━━━━━━┓                                           ┏━━━━━━━━━━┳━━━━━━━━━━┓
+  &to BASE   &none                                                  &trans                                   &trans                                                 &none      &trans
+//┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┫                             ┏━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
+  &trans     &none      &none      &none      &none      &none               /*┃                             ┃*/        &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp MINUS
+  &trans     &none      &kp PTAB   &kp PG_UP  &none      &none      &trans   /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &trans     &kp PG_UP  &kp LEFT   &kp UP     &kp RIGHT  &colon     &trans
+  &trans     &none      &kp NTAB   &kp PG_DN  &none      &none      &trans     &trans             &trans     &trans     &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &semi      &trans
+//┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
+  &trans         &mo MISC       &trans         &trans         &trans         &to BASE           &to BASE       &trans         &trans         &kp RET        &mo MISC           &trans
 //┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
             >;
         };
