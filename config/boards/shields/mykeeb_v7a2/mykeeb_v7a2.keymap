@@ -85,7 +85,7 @@
 //┏━━━━━━━━━━┳━━━━━━━━━━┓                                           ┏━━━━━━━━━━┓                             ┏━━━━━━━━━━┓                                           ┏━━━━━━━━━━┳━━━━━━━━━━┓
   &none      &bootloader                                            &none                                    &none                                                  &none      &none    
 //┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┫                             ┏━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
-  &kp ESC    &kp Q      &kp W      &kp E      &kp R      &kp T               /*┃                             ┃*/        &kp Y      &kp U      &kp I      &kp O      &kp P      &kp MINUS
+  &tabesc    &kp Q      &kp W      &kp E      &kp R      &kp T               /*┃                             ┃*/        &kp Y      &kp U      &kp I      &kp O      &kp P      &kp MINUS
   &kp CAPS   &kp A      &kp S      &kp D      &kp F      &kp G      &kp TAB  /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &kp TAB    &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
   &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B      &bmt LCTRL DEL &kp DEL        &kp BSPC   &bmt RCTRL BSPC &kp N &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHIFT
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
