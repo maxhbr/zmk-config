@@ -62,13 +62,13 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&tog>;
         };
-        // gresc: grave_escape {
-        //     compatible = "zmk,behavior-mod-morph";
-        //     label = "GRAVE_ESCAPE";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp ESC>, <&kp GRAVE>;
-        //     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
-        // };
+        tabesc: tab_escape {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TAB_ESCAPE";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp TAB>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -159,7 +159,7 @@
   &trans     &none      &kp PTAB   &kp PG_UP  &none      &none      &trans   /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &trans     &kp PG_UP  &kp LEFT   &kp UP     &kp RIGHT  &colon     &trans
   &trans     &none      &kp NTAB   &kp PG_DN  &none      &none      &trans     &trans             &trans     &trans     &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &semi      &trans
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
-  &trans         &mo MISC       &trans         &trans         &trans         &to BASE           &to BASE       &trans         &trans         &kp RET        &mo MISC           &trans
+  &trans         &mo MISC       &trans         &trans         &trans         &to BASE           &to BASE       &trans         &trans         &kp SPC        &mo MISC           &trans
 //┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
             >;
         };
