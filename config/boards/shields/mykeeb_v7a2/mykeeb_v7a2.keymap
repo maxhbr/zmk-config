@@ -60,10 +60,10 @@
 #define BASE_A    &bhm LCTL A
 #define BASE_S    &bhm LGUI S
 #define BASE_D    &bhm LALT D
-#define BASE_F    &bhm LSHIFT F
-#define BASE_G    &kp          G
-#define BASE_H    &kp          H
-#define BASE_J    &bhm LLSHIFT J
+#define BASE_F    &kp       F
+#define BASE_G    &kp       G
+#define BASE_H    &kp       H
+#define BASE_J    &kp       J
 #define BASE_K    &bhm LALT K
 #define BASE_L    &bhm LGUI L
 #define BASE_SEMI &bhm LCTL SEMI
