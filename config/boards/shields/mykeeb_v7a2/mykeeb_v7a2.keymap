@@ -26,6 +26,17 @@
             #binding-cells = <0>; \
             bindings = <&macro_press &kp CAPS> , <&macro_tap &kp key >  , <&macro_release &kp CAPS> ; \
         };
+
+#define BASE_A &lh_pht LSFT A
+#define BASE_S &lh_pht LGUI S
+#define BASE_D &lh_pht LALT D
+#define BASE_F &lh_pht LCTL F
+#define BASE_G &kp          G
+#define BASE_H &kp          H
+#define BASE_J &lh_pht LCTL J
+#define BASE_K &lh_pht LALT K
+#define BASE_L &lh_pht LGUI L
+#define BASE_SEMI &lh_pht LSFT SEMI
 //┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 //┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -124,7 +135,7 @@
   &none      &bootloader                                            &none                                    &none                                                  &none      &none    
 //┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┫                             ┏━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
   &tabesc    &kp Q      &kp W      &kp E      &kp R      &kp T               /*┃                             ┃*/        &kp Y      &kp U      &kp I      &kp O      &kp P      &kp MINUS
-  &kp CAPS   &lh_pht LSFT A &lh_pht LGUI S &lh_pht LALT D &lh_pht LCTL F &kp G      &kp TAB  /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &kp TAB    &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
+  &kp CAPS   BASE_A     BASE_S     BASE_D     BASE_F     BASE_G     &kp TAB  /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &kp TAB    BASE_H     BASE_J     BASE_K     BASE_L     BASE_SEMI  &kp SQT
   &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B      &bmt LCTRL DEL &kp DEL        &kp BSPC   &bmt RCTRL BSPC &kp N &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHIFT
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
   &none          &none          &lt NAVR RET   &bmt LMETA RET &kp RET        &none              &none          &kp SPC        &bmt LMETA SPC &lt NAVL SPC   &none              &none
