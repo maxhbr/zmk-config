@@ -9,7 +9,8 @@ gh run list --limit 1
 conclusion="$(gh run list --limit 1 --json conclusion --jq '.[].conclusion')"
 echo "last action run: ${conclusion}"
 if [[ "$conclusion" != "success" ]]; then
-    exit 1
+    sleep 10
+    exec "$@"
 fi
 echo
 
