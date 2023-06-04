@@ -174,11 +174,39 @@
     };
 
     macros {
+        CAPS_MACRO(caps_Q, Q)
+        CAPS_MACRO(caps_W, W)
+        CAPS_MACRO(caps_E, E)
+        CAPS_MACRO(caps_R, R)
+        CAPS_MACRO(caps_T, T)
+        CAPS_MACRO(caps_Y, Y)
+        CAPS_MACRO(caps_U, U)
+        CAPS_MACRO(caps_I, I)
+        CAPS_MACRO(caps_O, O)
+        CAPS_MACRO(caps_P, P)
+
+        CAPS_MACRO(caps_A, A)
+        CAPS_MACRO(caps_S, S)
+        CAPS_MACRO(caps_D, D)
+        CAPS_MACRO(caps_F, F)
+        CAPS_MACRO(caps_G, G)
+        CAPS_MACRO(caps_H, H)
+        CAPS_MACRO(caps_J, J)
+        CAPS_MACRO(caps_K, K)
+        CAPS_MACRO(caps_L, L)
         CAPS_MACRO(colon, SEMI)
+        CAPS_MACRO(caps_SQT, SQT)
+
+        CAPS_MACRO(caps_Z, Z)
+        CAPS_MACRO(caps_X, X)
+        CAPS_MACRO(caps_C, C)
+        CAPS_MACRO(caps_V, V)
+        CAPS_MACRO(caps_B, B)
+        CAPS_MACRO(caps_N, N)
+        CAPS_MACRO(caps_M, M)
+        CAPS_MACRO(quote, COMMA)
+        CAPS_MACRO(squote, Q)
         CAPS_MACRO(semi, FSLH)
-        ZMK_MACRO(to_num,
-            bindings = <&kp Z &kp M &kp K>;
-        )
     };
 
     conditional_layers {
@@ -257,6 +285,20 @@
   &trans     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5              /*┃                             ┃*/        &kp F6     &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
   &trans     &none      &kp PTAB   &kp PG_UP  &none      &none      &trans   /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &trans     &kp PG_UP  &none      &kp UP     &none      &none      &trans
   &trans     &none      &kp NTAB   &kp PG_DN  &kp INS    &none      &trans     &trans             &trans     &trans     &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &none      &trans
+//┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
+  &trans         &trans         &trans         &trans         &trans         &to BASE           &to BASE       &trans         &trans         &trans         &trans             &trans
+//┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
+            >;
+        };
+        caps_layer {
+            label= "CAPS";
+            bindings = <
+//┏━━━━━━━━━━┳━━━━━━━━━━┓                                           ┏━━━━━━━━━━┓                             ┏━━━━━━━━━━┓                                           ┏━━━━━━━━━━┳━━━━━━━━━━┓
+  &to BASE   &none                                                  &trans                                   &trans                                                 &none      &trans
+//┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┫                             ┏━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
+  &tabesc    &caps_Q    &caps_W    &caps_E    &caps_R    &caps_T             /*┃                             ┃*/        &caps_Y    &caps_U    &caps_I    &caps_O    &caps_P    &kp MINUS
+  &trans     &caps_A    &caps_S    &caps_D    &caps_F    &caps_G    &trans   /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &caps_TAB  &caps_H    &caps_J    &caps_K    &caps_L    &colon     &caps_SQT
+  &trans     &caps_Z    &caps_X    &caps_C    &caps_V    &caps_B    &bmt LCTRL DEL &trans         &trans     &bmt RCTRL BSPC &caps_N &caps_M  &quote     &squote    &semi      &trans
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
   &trans         &trans         &trans         &trans         &trans         &to BASE           &to BASE       &trans         &trans         &trans         &trans             &trans
 //┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
