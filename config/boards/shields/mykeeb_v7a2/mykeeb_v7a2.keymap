@@ -139,10 +139,9 @@
 //┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 //┃    layers                                                                    ┃
 #define BASE 0
-#define NAVL 1
-#define NAVR 2
-#define NAV  3
-#define MISC 4
+#define NAV  1
+#define MISC 2
+#define SYMB 3
 //┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 &sl {
@@ -215,14 +214,6 @@
         CAPS_MACRO(semi, FSLH)
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = < NAVL NAVR >;
-            then-layer = < MISC >;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -233,38 +224,10 @@
   &none      &bootloader                                            &none                                    &none                                                  &none      &none    
 //┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┫                             ┏━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
   &tabesc    &kp Q      &kp W      &kp E      &kp R      &kp T               /*┃                             ┃*/        &kp Y      &kp U      &kp I      &kp O      &kp P      &kp MINUS
-  MO_TOG(5)  BASE_A     BASE_S     BASE_D     BASE_F     BASE_G     &kp TAB  /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &kp TAB    BASE_H     BASE_J     BASE_K     BASE_L     BASE_SEMI  &kp SQT
+  MO_TOG(SYMB) BASE_A   BASE_S     BASE_D     BASE_F     BASE_G     &kp TAB  /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &kp TAB    BASE_H     BASE_J     BASE_K     BASE_L     BASE_SEMI  &kp SQT
   &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B      &bmt LCTRL DEL &kp DEL        &kp BSPC   &bmt RCTRL BSPC &kp N &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHIFT
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
   &none          &none          &lt NAV  RET   &bmt LMETA RET &kp RET        &none              &none          &kp SPC        &bmt LMETA SPC &lt NAV  SPC   &none              &none
-//┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
-            >;
-        };
-        nav_left_layer {
-            label= "NAVL";
-            bindings = <
-//┏━━━━━━━━━━┳━━━━━━━━━━┓                                           ┏━━━━━━━━━━┓                             ┏━━━━━━━━━━┓                                           ┏━━━━━━━━━━┳━━━━━━━━━━┓
-  &to BASE   &none                                                  &trans                                   &trans                                                 &trans     &trans
-//┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┫                             ┏━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
-  &trans     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5              /*┃                             ┃*/        &none      &none      &none      &none      &none      &none
-  &trans     &none      &kp PTAB   &kp PG_UP  &none      &none      &trans   /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &trans     &kp PG_UP  &kp LEFT   &kp UP     &kp RIGHT  &colon     &none
-  &trans     &none      &kp NTAB   &kp PG_DN  &kp INS    &none      &trans     &trans             &trans     &trans     &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &semi      &trans
-//┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
-  &trans         &mo MISC       &trans         &trans         &trans         &to BASE           &to BASE       &trans         &trans         &trans         &mo MISC           &trans
-//┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
-            >;
-        };
-        nav_right_layer {
-            label= "NAVR";
-            bindings = <
-//┏━━━━━━━━━━┳━━━━━━━━━━┓                                           ┏━━━━━━━━━━┓                             ┏━━━━━━━━━━┓                                           ┏━━━━━━━━━━┳━━━━━━━━━━┓
-  &to BASE   &none                                                  &trans                                   &trans                                                 &none      &trans
-//┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┫                             ┏━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
-  &trans     &none      &none      &none      &none      &none               /*┃                             ┃*/        &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp MINUS
-  &trans     &none      &kp PTAB   &kp PG_UP  &none      &none      &trans   /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &trans     &kp PG_UP  &kp LEFT   &kp UP     &kp RIGHT  &colon     &trans
-  &trans     &none      &kp NTAB   &kp PG_DN  &none      &none      &trans     &trans             &trans     &trans     &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &semi      &trans
-//┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
-  &trans         &mo MISC       &trans         &trans         &trans         &to BASE           &to BASE       &trans         &trans         &trans         &mo MISC           &trans
 //┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
             >;
         };
@@ -296,8 +259,8 @@
 //┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
             >;
         };
-        caps_layer {
-            label= "CAPS";
+        symb_layer {
+            label= "SYMB";
             bindings = <
 //┏━━━━━━━━━━┳━━━━━━━━━━┓                                           ┏━━━━━━━━━━┓                             ┏━━━━━━━━━━┓                                           ┏━━━━━━━━━━┳━━━━━━━━━━┓
   &to BASE   &none                                                  &trans                                   &trans                                                 &none      &trans
