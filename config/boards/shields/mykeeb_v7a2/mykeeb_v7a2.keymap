@@ -27,7 +27,7 @@
             bindings = <&macro_press &kp CAPS> , <&macro_tap &kp key >  , <&macro_release &kp CAPS> ; \
         };
 
-#define HOMEROW_OPTION 2
+#define HOMEROW_OPTION 0
 
 #if HOMEROW_OPTION == 1
 
