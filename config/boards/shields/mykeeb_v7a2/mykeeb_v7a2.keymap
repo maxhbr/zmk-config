@@ -26,11 +26,14 @@
             #binding-cells = <0>; \
             bindings = <&macro_press &kp CAPS> , <&macro_tap &kp key >  , <&macro_release &kp CAPS> ; \
         };
+//┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
+//┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+//┃    homerow mod stuff                                                         ┃
 #define HOMEROW_OPTION 0
-
+//┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+//┃    option 1                                                                  ┃
 #if HOMEROW_OPTION == 1
-
 #define BASE_A &lh_pht LSFT A
 #define BASE_S &lh_pht LGUI S
 #define BASE_D &lh_pht LALT D
@@ -68,17 +71,17 @@
                                           6 7 8 9 10 11 \
                                           18 19 20 21 22 23 24 \
                                           32 33 34 35 36 37 38 \
-                                          46 47 48 49 51>;
+                                          46 47 48 49 51>; \
         };
-
+//┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+//┃    option 2                                                                  ┃
 #elif HOMEROW_OPTION == 2
-
 #define BASE_A    &hm LCTL A
 #define BASE_S    &hm LGUI S
 #define BASE_D    &hm LALT D
 #define BASE_F    &hm LSHIFT F
-#define BASE_G    &kp          G
-#define BASE_H    &kp          H
+#define BASE_G    &kp G
+#define BASE_H    &kp H
 #define BASE_J    &hm LSHIFT J
 #define BASE_K    &hm LALT K
 #define BASE_L    &hm LGUI L
@@ -93,9 +96,9 @@
             flavor = "tap-preferred"; \
             bindings = <&kp>, <&kp>; \
         };
-
+//┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+//┃    option 3                                                                  ┃
 #elif HOMEROW_OPTION == 3
-
 #define BASE_A    &bhm LCTL A
 #define BASE_S    &bhm LGUI S
 #define BASE_D    &bhm LALT D
@@ -116,9 +119,9 @@
             flavor = "balanced"; \
             bindings = <&kp>, <&kp>; \
         };
-
+//┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+//┃    option no homerow mods                                                    ┃
 #else
-
 #define BASE_A    &kp A
 #define BASE_S    &kp S
 #define BASE_D    &kp D
@@ -130,7 +133,6 @@
 #define BASE_L    &kp L
 #define BASE_SEMI &kp SEMI
 #define HOMEROW_MACRO
-
 #endif
 //┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
@@ -234,7 +236,7 @@
   MO_TOG(5)  BASE_A     BASE_S     BASE_D     BASE_F     BASE_G     &kp TAB  /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &kp TAB    BASE_H     BASE_J     BASE_K     BASE_L     BASE_SEMI  &kp SQT
   &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B      &bmt LCTRL DEL &kp DEL        &kp BSPC   &bmt RCTRL BSPC &kp N &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHIFT
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
-  &none          &none          &lt NAVR RET   &bmt LMETA RET &kp RET        &none              &none          &kp SPC        &bmt LMETA SPC &lt NAVL SPC   &none              &none
+  &none          &none          &lt NAV  RET   &bmt LMETA RET &kp RET        &none              &none          &kp SPC        &bmt LMETA SPC &lt NAV  SPC   &none              &none
 //┗━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━┛
             >;
         };
@@ -300,7 +302,7 @@
 //┏━━━━━━━━━━┳━━━━━━━━━━┓                                           ┏━━━━━━━━━━┓                             ┏━━━━━━━━━━┓                                           ┏━━━━━━━━━━┳━━━━━━━━━━┓
   &to BASE   &none                                                  &trans                                   &trans                                                 &none      &trans
 //┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┫                             ┏━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
-  &tabesc    &caps_Q    &caps_W    &caps_E    &caps_R    &caps_T             /*┃                             ┃*/        &caps_Y    &caps_U    &caps_I    &caps_O    &caps_P    &kp MINUS
+  &tabesc    &caps_Q    &caps_W    &caps_E    &caps_R    &caps_T             /*┃                             ┃*/        &caps_Y    &caps_U    &caps_I    &caps_O    &caps_P    &kp LEFT_BRACKET
   &trans     &caps_A    &caps_S    &caps_D    &caps_F    &caps_G    &trans   /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &kp TAB    &caps_H    &caps_J    &caps_K    &caps_L    &colon     &caps_SQT
   &trans     &caps_Z    &caps_X    &caps_C    &caps_V    &caps_B    &bmt LCTRL DEL &trans         &trans     &bmt RCTRL BSPC &caps_N &caps_M  &quote     &squote    &semi      &trans
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫
