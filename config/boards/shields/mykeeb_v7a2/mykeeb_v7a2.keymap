@@ -210,7 +210,7 @@
         CAPS_MACRO(caps_N, N)
         CAPS_MACRO(caps_M, M)
         CAPS_MACRO(quote, COMMA)
-        CAPS_MACRO(squote, Q)
+        CAPS_MACRO(squote, DOT)
         CAPS_MACRO(semi, FSLH)
     };
 
