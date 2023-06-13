@@ -231,13 +231,23 @@
 // 8   // 32 33 34 35 36 37 38 39     40 41 42 43 44 45 46 47
 // 1+5 // 48       49 50 51 52 53     54 55 56 57 58       59
         combo_ret {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             key-positions = <50 51>;
             bindings = <&kp RET>;
         };
+        combo_ret_2 {
+            timeout-ms = <40>;
+            key-positions = <51 52>;
+            bindings = <&kp RET>;
+        };
         combo_spc {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             key-positions = <56 57>;
+            bindings = <&kp SPC>;
+        };
+        combo_spc_2 {
+            timeout-ms = <40>;
+            key-positions = <55 56>;
             bindings = <&kp SPC>;
         };
     };
