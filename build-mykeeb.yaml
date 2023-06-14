@@ -4,3 +4,7 @@ include:
     shield: mykeeb_v7a2_left
   - board: seeeduino_xiao_ble
     shield: mykeeb_v7a2_right
+  - board: seeeduino_xiao_ble
+    shield: mykeeb_v7a5_left
+  - board: seeeduino_xiao_ble
+    shield: mykeeb_v7a5_right
