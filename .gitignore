@@ -1,1 +1,5 @@
 /firmware
+.west
+modules/
+zephyr/
+zmk/
