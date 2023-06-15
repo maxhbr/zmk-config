@@ -152,7 +152,7 @@
         base_layer {
             label= "BASE";
             bindings = <
-  &reset     &bootloader                                                                                                                                            &none      &reset   
+  &sys_reset &bootloader                                                                                                                                            &bootloader &sys_reset   
 //┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓                             ┏━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
   &tabesc    &kp Q      &kp W      &kp E      &kp R      &kp T      &none    /*┃*/                           &none      &kp Y      &kp U      &kp I      &kp O      &kp P      &kp MINUS
   &mo SYMB   &kp A      &kp S      &kp D      &kp F      &kp G      &kp TAB  /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &kp TAB    &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
