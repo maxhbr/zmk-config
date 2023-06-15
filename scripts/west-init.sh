@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-DIR="$HOME/MINE/ZMK"
+DIR="$HOME/ZMK"
 
 if [[ -d "$DIR" ]]; then
     exit 1
