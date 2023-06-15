@@ -9,6 +9,11 @@ fi
 label=XIAO-SENSE
 dev=/dev/disk/by-label/"$label"
 firmware="$1"
+if [[ -d "$firmware" ]]; then
+    if [[ -f "$firmware/zephyr/zmk.uf2" ]]; then
+        firmware="$firmware/zephyr/zmk.uf2"
+    fi
+fi
 
 echo "waiting for $dev"
 while sleep 1; do
