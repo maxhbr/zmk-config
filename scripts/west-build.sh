@@ -26,7 +26,7 @@ west_build() {
 
     mkdir -p "$OUT"
     if [[ -f "${BUILD_DIR}"/zephyr/zmk.uf2 ]]; then
-        local OUT_UF2="$OUT/${SHIELD}_${BOARD}-zmk.uf2"
+        local OUT_UF2="$OUT/${SHIELD}-${BOARD}-zmk.uf2"
         if [[ -f "$OUT_UF2" ]]; then
                 rm "$OUT_UF2"
         fi

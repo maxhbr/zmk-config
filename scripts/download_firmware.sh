@@ -3,7 +3,7 @@
 set -euo pipefail
 
 SCRIPT="$(readlink -f "$0")"
-DIR="$(dirname "$SCRIPT")/firmware"
+DIR="$(dirname "$SCRIPT")/../firmware"
 mkdir -p "$DIR"
 cd "$DIR"
 
