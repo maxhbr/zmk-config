@@ -25,8 +25,12 @@ west_build() {
         -DBOARD_ROOT="$CONFIG"
 
     mkdir -p "$OUT"
-    if [ -f "${BUILD_DIR}"/zephyr/zmk.uf2 ]; then
-        cp "${BUILD_DIR}"/zephyr/zmk.uf2 "$OUT/${SHIELD}-${BOARD}.uf2"
+    if [[ -f "${BUILD_DIR}"/zephyr/zmk.uf2 ]]; then
+        local OUT_UF2="$OUT/${SHIELD}_${BOARD}-zmk.uf2"
+        if [[ -f "$OUT_UF2" ]]; then
+                rm "$OUT_UF2"
+        fi
+        ln -s "${BUILD_DIR}"/zephyr/zmk.uf2 "$OUT_UF2"
     fi
 }
 
