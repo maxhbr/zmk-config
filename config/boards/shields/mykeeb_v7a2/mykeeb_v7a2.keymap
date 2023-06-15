@@ -303,7 +303,7 @@
 //┏━━━━━━━━━━┳━━━━━━━━━━┓                                           ┏━━━━━━━━━━┓                             ┏━━━━━━━━━━┓                                           ┏━━━━━━━━━━┳━━━━━━━━━━┓
   &to BASE   &none                                                  &trans                                   &trans                                                 &none      &trans
 //┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━┫                             ┏━━━━━━━━━━╋━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫
-  &trans     &caps_Q    &caps_W    &caps_E    &caps_R    &caps_T             /*┃                             ┃*/        &caps_Y    &caps_U    &caps_I    &caps_O    &caps_P    &trans
+  &trans     &caps_Q    &caps_W    &caps_E    &caps_R    &caps_T             /*┃                             ┃*/        &caps_Y    &caps_U    &caps_I    &caps_O    &caps_P    &kp LEFT_BRACKET
   &trans     &caps_A    &caps_S    &caps_D    &caps_F    &caps_G    &trans   /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ &trans     &caps_H    &caps_J    &caps_K    &caps_L    &colon     &caps_SQT
   &trans     &caps_Z    &caps_X    &caps_C    &caps_V    &caps_B    &trans     &trans            &trans      &trans     &caps_N    &caps_M    &quote     &squote    &semi      &trans
 //┣━━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━━┫

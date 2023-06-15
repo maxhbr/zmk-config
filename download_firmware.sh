@@ -4,6 +4,7 @@ set -euo pipefail
 
 SCRIPT="$(readlink -f "$0")"
 DIR="$(dirname "$SCRIPT")/firmware"
+mkdir -p "$DIR"
 cd "$DIR"
 
 gh run list --limit 1
