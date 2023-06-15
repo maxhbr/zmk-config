@@ -3,7 +3,7 @@
 
 if SHIELD_MYKEEB_V7A5_LEFT
 
-config ZMK_KEYBOARD_5AME
+config ZMK_KEYBOARD_NAME
     default "mykeeb_v7a5"
     
 config ZMK_SPLIT_ROLE_CENTRAL
