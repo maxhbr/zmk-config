@@ -4,28 +4,28 @@ jobs:
   build-mykeeb:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      build_matrix_path: build-mykeeb.yaml
+      build_matrix_path: config/mykeeb.build.yaml
   build-taira:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      build_matrix_path: build-taira.yaml
+      build_matrix_path: config/taira.build.yaml
   build-eternal_keypad:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      build_matrix_path: build-eternal_keypad.yaml
+      build_matrix_path: config/eternal_keypad.build.yaml
   build-revxlp:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      build_matrix_path: build-revxlp.yaml
+      build_matrix_path: config/revxlp.build.yaml
   build-redox:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      build_matrix_path: build-redox.yaml
+      build_matrix_path: config/redox.build.yaml
   build-totem:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      build_matrix_path: build-totem.yaml
+      build_matrix_path: config/totem.build.yaml
   build-settings_reset:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      build_matrix_path: build-settings_reset.yaml
+      build_matrix_path: config/settings_reset.build.yaml
