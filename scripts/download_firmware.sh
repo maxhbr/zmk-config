@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-
 set -euo pipefail
 
 SCRIPT="$(readlink -f "$0")"
-DIR="$(dirname "$SCRIPT")/../firmware"
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+DIR="${SCRIPTPATH}/../firmware"
 mkdir -p "$DIR"
 cd "$DIR"
 
@@ -25,7 +25,7 @@ gh run download --pattern firmware
 
 cd "$DIR"
 find "$date_dir" -type f |
-    while read output; do
+    while read -r output; do
         bn="$(basename "$output")"
         echo "get $bn"
         if [[ -f "$bn" ]]; then

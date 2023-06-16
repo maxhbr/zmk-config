@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
 if [[ "$1" == "--download" ]]; then
     shift
-    ./download_firmware.sh
+    "$SCRIPTPATH/download_firmware.sh"
+elif [[ "$1" == "--build" ]]; then
+    shift
+    "$SCRIPTPATH/west-build.sh" "$1"
 fi
 
 label=XIAO-SENSE

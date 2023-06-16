@@ -3,4 +3,4 @@
 modules/
 zephyr/
 zmk/
-build-*/
+*-build/
