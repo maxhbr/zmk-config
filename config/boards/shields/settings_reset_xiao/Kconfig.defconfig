@@ -4,7 +4,6 @@
 if SHIELD_SETTINGS_RESET_XIAO
 
 config ZMK_KEYBOARD_NAME
-    default "SETTINGS RESET XIAO"
-
+    default "XIAO RESET"
 endif
 
