@@ -116,6 +116,13 @@ flash_firmware() {
 if [[ $# -eq 0 ]]; then
     help
     exit 1
+elif [[ "$1" == "init" ]]; then
+    cd "$ROOT"
+    west init -l ./config
+    west update
+    west zephyr-export
+elif [[ "$1" == "update" ]]; then
+    west update
 elif [[ "$1" == "build" ]]; then
     shift
     if [[ $# -eq 2 ]]; then
