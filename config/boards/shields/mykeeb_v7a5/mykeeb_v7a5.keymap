@@ -269,7 +269,7 @@
             bindings = <
 //┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓                             ┏━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━┓
   &to BASE  XXX        XXX        XXX        XXX        XXX        &bootloader                              &bootloader XXX       XXX        XXX        XXX        XXX        XXX
-  XXX       &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 XXX XXX     /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ XXX        &bt BT_PREV XXX       XXX        &bt BT_NXT XXX        XXX
+  XXX       XXX        XXX        XXX        XXX        XXX        XXX      /*┣━━━━━━━━━━┓       ┏━━━━━━━*/ XXX        &bt BT_PREV XXX       XXX        &bt BT_NXT XXX        XXX
   XXX       XXX        XXX        XXX        XXX        XXX        XXX        &bt BT_CLR         XXX        XXX        &bt BT_PREV XXX       XXX        &bt BT_NXT XXX        XXX
 //┣━━━━━━━━━╋━━━┳━━━━━━┻━━━━━━━┳━━┻━━━━━━━━━━┻┳━━━━━━━━━┻━━━━┳━━━━━┻━━━━━━━━┳━┻━━━━━━━━━━┻━┓   ┏━┻━━━━━━━━━━┻━┳━━━━━━━━┻━━━━━┳━━━━┻━━━━━━━━━┳┻━━━━━━━━━━┻━━┳━━━━━━━┻━━━━━━┳━━━╋━━━━━━━━━┫
   XXX           XXX            XXX            XXX            XXX            &to BASE     /*┃*/ &to BASE       XXX            XXX            XXX            XXX                XXX   
